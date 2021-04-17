@@ -1,0 +1,64 @@
+Custom version of ReloadOptions mutator, made with ServerPerks support!
+
+Now it will show in your ESC-Menu (Like in the screenshot)
+
+[h1][b][u]Credits[/u][/b][/h1]
+
+- 10⁻³ m³
+- ScaryGhost for code reference
+- Me
+
+[h1][b][u]Whitelist status[/u][/b][/h1]
+
+- NO (?) Test and check yourself.
+
+[h1][b][u]Notes[/u][/b][/h1]
+
+- 100% Support for 1080p & 720p resolutions
+- 100% Support for ServerPerks
+- No matter how many tabs you have in ESC-Menu, it will always show there. e.g. ServerTools tab & Server Achievments tab, now you will also see ReloadOptions tab
+
+[h1][b][u]Number Of Files[/u][/b][/h1]
+
+- 2 (For the server)
+- 1 (Config, for the clients)
+
+[h1][b][u]Sample Config (CLIENTS ONLY)[/u][/b][/h1]
+
+[code]
+[ReloadOptionsSP.RldOptInteraction]
+bAllowInterrupt=True
+bDisableAuto=False
+bNoAmmoMsg=True
+bInterruptMsg=True
+bNeedReloadMsg=False
+InterruptAliases=Fire
+InterruptAliases=AltFire
+InterruptAliases=ThrowNade
+InterruptAliases=ThrowGrenade
+InterruptAliases=GetWeapon
+InterruptAliases=SwitchWeapon
+InterruptAliases=SwitchToLastWeapon
+[/code]
+
+This configuration is AUTOMATICALLY generated when you change your settings from the ESC-Menu. You don't have to create it manually.
+
+[h1][b][u]File Names[/u][/b][/h1]
+
+- \System\ReloadOptionsSP.u
+- \System\ReloadOptionsSP.ucl
+- \System\ReloadOptionsSP_Config.ini
+
+[h1][b][u]Usage[/u][/b][/h1]
+
+1- Subscribe or download manually (Recommended)
+2- Launch the game and wait to see 'Completed'
+3- Restart the game and you can see the mutators in your list
+
+[h1][b][u]Class Names[/u][/b][/h1]
+
+- Mut: ReloadOptionsSP.ReloadOptionsSP
+
+[h1][b][u]Manual Download Links (Recommended)[/u][/b][/h1]
+
+- Github: https://github.com/Bleeding-Action-Man/ReloadOptions_Custom/releases/tag/v1.0
