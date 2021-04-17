@@ -40,14 +40,15 @@ function Mutate(string MutateString, PlayerController Sender) {
 
 /* Add the interaction. */
 simulated function Tick(float DeltaTime) {
-  local PlayerController localController;
+  local PlayerController PC;
+  local RldOptInteraction NewInteraction;
 
-  localController= Level.GetLocalPlayerController();
-  if (localController != none)
-  {
-    localController.Player.InteractionMaster.AddInteraction("ReloadOptionsSP.RldOptInteraction", localController.Player);
+  PC = Level.GetLocalPlayerController();
+  if (PC != None && !PC.PlayerReplicationInfo.bIsSpectator) {
+    NewInteraction = RldOptInteraction(PC.Player.InteractionMaster.AddInteraction("ReloadOptionsSP.RldOptInteraction", PC.Player));
+    NewInteraction.RegisterMutator(Self);
+    Disable('Tick');
   }
-  Disable('Tick');
 }
 
 defaultproperties

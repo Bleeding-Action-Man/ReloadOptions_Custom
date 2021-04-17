@@ -1,4 +1,4 @@
-class RldOptMidGameOptions extends MidGamePanel DependsOn(ReloadOptionsSP);
+class RldOptMidGameOptions extends MidGamePanel;
 
 var RldOptInteraction MyInteraction;
 var automated GUISectionBackground i_BGCenter;
@@ -70,7 +70,7 @@ defaultproperties
    Begin Object Class=GUISectionBackground Name=BGCenter
      // bFillClient=True
      Caption="Reload Options"
-      WinTop=0.05
+      WinTop=0.03
       WinLeft=0.25
       WinWidth=0.5
       WinHeight=0.5

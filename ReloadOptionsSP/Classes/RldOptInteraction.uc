@@ -7,7 +7,6 @@ var GUI.GUITabItem ReloadOpt_Tab;
 var config bool bAllowInterrupt, bDisableAuto, bNoAmmoMsg, bInterruptMsg, bNeedReloadMsg;
 var config array<string> InterruptAliases;
 var float timeReloaded, timeReceivedMessage;
-var string ReloadOptClass_SP;
 
 ///////////////////////////
 //		INTERACTION		//
@@ -32,7 +31,7 @@ function RegisterMutator(ReloadOptionsSP aMut) {
 
 function bool KeyEvent(EInputKey Key, EInputAction Action, float Delta) {
   local string Alias, Alias_SP, LeftPart, RigthPart;
-  local MidGamePanel panel;
+  local RldOptMidGameOptions panel;
   local UT2K4PlayerLoginMenu escMenu;
   local int i;
 
@@ -72,12 +71,10 @@ function bool KeyEvent(EInputKey Key, EInputAction Action, float Delta) {
           }
         escMenu= UT2K4PlayerLoginMenu(KFGUIController(ViewportOwner.GUIController).ActivePage);
         if (escMenu != none && escMenu.c_Main.TabIndex(ReloadOpt_Tab.caption) == -1) {
-          if (escMenu.IsA('SRInvasionLoginMenu')) {
-          ReloadOpt_Tab.ClassName = ReloadOptClass_SP;
-          }
-          panel= MidGamePanel(escMenu.c_Main.AddTabItem(ReloadOpt_Tab));
+          panel = RldOptMidGameOptions(escMenu.c_Main.AddTabItem(ReloadOpt_Tab));
           if (panel != none) {
           panel.ModifiedChatRestriction= escMenu.UpdateChatRestriction;
+          panel.MyInteraction = self;
           }
         }
       }
@@ -263,7 +260,6 @@ function InterruptReload(optional bool bFireAlias, optional bool bAltFireAlias) 
 
 defaultproperties
 {
-   ReloadOptClass_SP="ReloadOptionsSP.RldOptMidGameOptions_SP"
    ReloadOpt_Tab=(ClassName="ReloadOptionsSP.RldOptMidGameOptions",Caption="Reload Options",Hint="Options to customize reload.")
    InterruptAliases(0)="Fire"
    InterruptAliases(1)="AltFire"
